@@ -1,10 +1,10 @@
 
 /*CHIEDO ALL'UTENTE GLI ANNI E STAMPO SU CONSOLE E SUL ID */ 
-const userAge = prompt('Quanti anni hai?');
+const userAge = parseInt(prompt('Quanti anni hai?'));
 console.log(userAge);
 document.getElementById('my-age').innerHTML += `${userAge} anni`;
 /*CHIEDO ALL'UTENTE I KM E STAMPO SU CONSOLE E SUL ID */ 
-const userKm = prompt('Quanti km vuoi percorrere?');
+const userKm = parseFloat(prompt('Quanti km vuoi percorrere?'));
 console.log(userKm);
 document.getElementById('my-km').innerHTML += `${userKm} km`;
 
@@ -20,7 +20,7 @@ if (userAge < 18){
     console.log(ticketPrice);
     document.getElementById('my-ticket-price').innerHTML += `${ticketPrice} €`;
     document.getElementById('my-discount').innerHTML = `Sei piccolo quindi hai ${priceDifference}€ di sconto`;
-} else if (userAge > 65){
+} else if (userAge >= 65){
     priceDifference = ((ticketPrice * 40) / 100).toFixed(2);
     document.getElementById('my-ticket-total-price').innerHTML += `${ticketPrice} €`;
     ticketPrice = (ticketPrice - priceDifference).toFixed(2);
